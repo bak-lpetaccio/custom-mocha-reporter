@@ -1,0 +1,14 @@
+{
+  "name": "mocha_custom_reporters",
+  "version": "1.0.0",
+  "main": "test.js",
+  "author": "Agustin Medina",
+  "license": "MIT",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --reporter=../../../custom-reporter.js"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1",
+    "superagent": "^3.7.0"
+  }
+}
