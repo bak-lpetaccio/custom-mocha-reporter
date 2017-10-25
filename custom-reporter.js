@@ -1,5 +1,7 @@
 var mocha = require('mocha');
 var request = require('./request');
+var npmPackage = require('./package.json');
+
 
 module.exports = MyReporter;
 
@@ -23,7 +25,13 @@ function MyReporter(runner) {
         tests++;
     });
     runner.on('end', function(){
-        var obj = { tests, passes, failures }
+        var obj = {
+          'package_version' : npmPackage.version,
+          'package_name' : npmPackage.name,
+          tests,
+          failures,
+          passes
+        };
         request(
             method="POST",
             url=URL,
